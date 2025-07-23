@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.Utility.ElementUtility;
+
 public class Homepage {
 
 	public WebDriver driver;
@@ -34,10 +36,14 @@ public class Homepage {
 	}
 
 	public void clickonSignupLoginButton() {
-		homepageSignupLoginButton.click();
+		ElementUtility.clickOnTheElement(homepageSignupLoginButton);
 	}
 
 	public boolean userNameOnHomepageIsDisplayed() {
 		return userNameOnHomepage.isDisplayed();
+	}
+
+	public String getUserNameFromTheHomepageHeader() {
+		return ElementUtility.getTextFromTheElement(userNameOnHomepage);
 	}
 }

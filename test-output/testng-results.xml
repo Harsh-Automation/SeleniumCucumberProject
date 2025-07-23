@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-20T11:48:27 IST" name="Default suite" finished-at="2025-07-20T11:49:14 IST" duration-ms="47172">
+  <suite started-at="2025-07-23T20:40:36 IST" name="Default suite" finished-at="2025-07-23T20:41:07 IST" duration-ms="30909">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestRunner.TestRunner@77888435]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-20T11:48:27 IST" name="Default test" finished-at="2025-07-20T11:49:14 IST" duration-ms="47172">
+    <test started-at="2025-07-23T20:40:36 IST" name="Default test" finished-at="2025-07-23T20:41:07 IST" duration-ms="30909">
       <class name="com.TestRunner.TestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.TestRunner.TestRunner@77888435]" started-at="2025-07-20T11:48:27 IST" name="setUpClass" finished-at="2025-07-20T11:48:27 IST" duration-ms="576" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.TestRunner.TestRunner@77888435]" started-at="2025-07-23T20:40:36 IST" name="setUpClass" finished-at="2025-07-23T20:40:37 IST" duration-ms="685" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@7b1559f1]]>
+                <![CDATA[org.testng.TestRunner@43fda8d9]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestRunner.TestRunner@77888435]" started-at="2025-07-20T11:48:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-20T11:49:14 IST" duration-ms="46539" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.TestRunner.TestRunner@77888435]" started-at="2025-07-23T20:40:37 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-23T20:41:07 IST" duration-ms="30153" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Signup to portal with valid details"]]>
+                <![CDATA["Login to portal with valid details"]]>
               </value>
             </param>
             <param index="1">
@@ -34,10 +34,27 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [Logged in as QATEST1] but found [Logged in as QATEST]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [Logged in as QATEST1] but found [Logged in as QATEST]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at com.StepDefinition.StepDefination.username_is_displayed_on_the_homepage(StepDefination.java:171)
+at ✽.Username "Logged in as QATEST1" is displayed on the homepage(file:///C:/Users/Harsh%20Sapariya/git/SeleniumCucumber/src/test/resources/FeatureFiles/Login.feature:11)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.TestRunner.TestRunner@77888435]" started-at="2025-07-20T11:49:14 IST" name="tearDownClass" finished-at="2025-07-20T11:49:14 IST" duration-ms="28" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.TestRunner.TestRunner@77888435]" started-at="2025-07-23T20:41:07 IST" name="tearDownClass" finished-at="2025-07-23T20:41:07 IST" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import com.Utility.ElementUtility;
 import com.Utility.WaitUtility;
 
 public class LoginPage {
@@ -14,13 +15,13 @@ public class LoginPage {
 	@FindBy(css = "[class='ico-login']")
 	WebElement loginBtnOnHomepage;
 
-	@FindBy(css = "[id='Email']")
+	@FindBy(css = "[data-qa='login-email']")
 	WebElement emailIdInputField;
 
-	@FindBy(css = "[id='Password']")
+	@FindBy(css = "[data-qa='login-password']")
 	WebElement passwordIdInputField;
 
-	@FindBy(xpath = "//button[text()='Log in']")
+	@FindBy(css  = "[data-qa='login-button']")
 	WebElement loginBtnOnLoginPage;
 
 	public LoginPage(WebDriver driver) {
@@ -36,18 +37,15 @@ public class LoginPage {
 
 	public void enterEmail(String email) {
 
-		WaitUtility.waitForTheVisiblityOfElement(emailIdInputField);
-		emailIdInputField.clear();
-		emailIdInputField.sendKeys(email);
+		ElementUtility.inputInTheInputField(emailIdInputField, email);
 	}
 
 	public void enterPassword(String password) {
-		passwordIdInputField.clear();
-		passwordIdInputField.sendKeys(password);
+		ElementUtility.inputInTheInputField(passwordIdInputField, password);
 	}
 
 	public void clickLoginButtonOnLoginPage() {
-		loginBtnOnLoginPage.click();
+		ElementUtility.clickOnTheElement(loginBtnOnLoginPage);
 	}
 
 }

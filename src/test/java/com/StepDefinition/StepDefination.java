@@ -4,6 +4,7 @@ import org.testng.Assert;
 
 import com.BaseClass.BaseClass;
 import com.PagesClass.Homepage;
+import com.PagesClass.LoginPage;
 import com.PagesClass.SignupPage;
 import com.Utility.DataUtility;
 
@@ -15,6 +16,7 @@ public class StepDefination extends BaseClass {
 
 	Homepage homepage;
 	SignupPage signup;
+	LoginPage login;
 
 	@Given("User is on the homepage")
 	public void user_is_on_the_homepage() {
@@ -35,7 +37,7 @@ public class StepDefination extends BaseClass {
 		homepage.clickonSignupLoginButton();
 	}
 
-	@Then("User is redirected to the Signup screen")
+	@Then("User is redirected to the Signup\\/Login screen")
 	public void user_is_redirected_to_the_signup_screen() {
 
 		signup = new SignupPage(driver);
@@ -143,6 +145,30 @@ public class StepDefination extends BaseClass {
 	public void logout_button_is_displayed_on_the_homepage() {
 
 		Assert.assertTrue(homepage.userNameOnHomepageIsDisplayed(), "Username is not displayed on the Homepage");
+	}
+
+	@When("User enter username {string}")
+	public void user_enter_username(String username) {
+
+		login = new LoginPage(driver);
+		login.enterEmail(username);
+
+	}
+
+	@When("User enters password {string}")
+	public void user_enters_password(String password) {
+		login.enterPassword(password);
+	}
+
+	@When("User clicks on Login button")
+	public void user_clicks_on_login_button() {
+		login.clickLoginButtonOnLoginPage();
+	}
+
+	@Then("Username {string} is displayed on the homepage")
+	public void username_is_displayed_on_the_homepage(String expectedText) {
+
+		Assert.assertEquals(homepage.getUserNameFromTheHomepageHeader(), expectedText);
 	}
 
 }
