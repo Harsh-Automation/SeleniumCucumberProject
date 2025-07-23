@@ -13,7 +13,7 @@ public class WaitUtility extends BaseClass {
 
 	static WebDriverWait wait;
 
-	public static void waitForTheVisiblityoFElement(WebElement element)
+	public static void waitForTheVisiblityOfElement(WebElement element)
 
 	{
 		try {
@@ -22,21 +22,21 @@ public class WaitUtility extends BaseClass {
 
 			wait.until(ExpectedConditions.visibilityOf(element));
 		} catch (Exception e) {
-			System.out.println("exception occur whilt waiting for an element" + element + " " + e.getMessage());
+			System.out.println("Exception occur while waiting for an element" + element + " " + e.getMessage());
 		}
 
 	}
 
-	public static void waitForTheVisiblityoFElementLOcated(By element)
+	public static void waitForTheVisiblityOfElementLocated(WebElement element)
 
 	{
 		try {
 
 			wait = new WebDriverWait(driver, Duration.ofSeconds(ConstantClass.waitForElement));
 
-			wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+			wait.until(ExpectedConditions.visibilityOfElementLocated((By) element));
 		} catch (Exception e) {
-			System.out.println("exception occur whilt waiting for an element" + element + " " + e.getMessage());
+			System.out.println("Exception occur while waiting for an element" + element + " " + e.getMessage());
 		}
 
 	}
@@ -50,7 +50,7 @@ public class WaitUtility extends BaseClass {
 
 			wait.until(ExpectedConditions.elementToBeClickable(element));
 		} catch (Exception e) {
-			System.out.println("exception occur whilt waiting for an element" + element + " " + e.getMessage());
+			System.out.println("Exception occur while waiting for an element" + element + " " + e.getMessage());
 		}
 
 	}

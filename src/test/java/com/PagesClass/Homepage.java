@@ -6,23 +6,38 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Homepage {
-	
+
 	public WebDriver driver;
-	
-	@FindBy(css = "[alt='nopCommerce demo store']")
+
+	@FindBy(css = "[alt='Website for automation practice']")
 	WebElement homepageHeaderIcon;
-	
-	
-	public Homepage(WebDriver driver)
-	{
-		this.driver=driver;
+
+	@FindBy(xpath = "//a[@href='/login']")
+	WebElement homepageSignupLoginButton;
+
+	@FindBy(xpath = "//i[@class='fa fa-user']/..")
+	WebElement userNameOnHomepage;
+
+	public Homepage(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 
-	
-	public void verifyHomepageHeaderIcon()
-	{
+	public void verifyHomepageHeaderIcon() {
 		homepageHeaderIcon.isDisplayed();
-		
+
+	}
+
+	public boolean signUpLoginButtonIsDisplayed() {
+
+		return homepageSignupLoginButton.isDisplayed();
+	}
+
+	public void clickonSignupLoginButton() {
+		homepageSignupLoginButton.click();
+	}
+
+	public boolean userNameOnHomepageIsDisplayed() {
+		return userNameOnHomepage.isDisplayed();
 	}
 }
